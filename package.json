@@ -1,0 +1,21 @@
+{
+  "name": "thegoodlife",
+  "version": "1.0.0",
+  "description": "Seek guidance from famous life coaches using The Good Life Coaching Application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "ritik_jadhav",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.1",
+    "nodemon": "^3.0.3",
+    "uuid": "^9.0.1",
+    "uuidv4": "^6.2.13"
+  }
+}
