@@ -1,3 +1,7 @@
-exports.validateName = (name) => {
-    return name.trim().length < 3 || name.trim().length > 50;
+exports.validateEmail = (value) => {
+    return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value);
+}
+
+exports.validateMobileNo = (value) => {
+    return value.length === 10;
 }
