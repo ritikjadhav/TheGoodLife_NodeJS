@@ -2,7 +2,7 @@ const { Counter, User } = require('../Model/userModel');
 const db = require('../Model/db');
 const bcrypt = require('bcryptjs');
 
-//const { v4: uuidv4 } = require('uuid'); // Another way for generating unique userId by using UUIDs (Universally Unique Identifiers)
+// Another way for generating unique userId by using UUIDs (Universally Unique Identifiers)
 
 exports.userRegisteration = async (req, res, next) => {
     try {

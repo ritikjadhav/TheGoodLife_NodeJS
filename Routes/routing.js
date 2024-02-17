@@ -1,23 +1,25 @@
 const express = require('express');
-const bookings = require('../Controller/userController');
+const user = require('../Controller/userController');
+const coach = require('../Controller/coachController');
+const booking = require('../Controller/bookingController');
 
 const routing = express.Router();
 
-routing.post('/users', bookings.userRegisteration);
+routing.post('/users', user.userRegisteration);
 
-routing.post('/users/login', bookings.userLogin);
+routing.post('/users/login', user.userLogin);
 
-// routing.post('/coaches', bookings.coachRegisteration);
+routing.post('/coaches', coach.coachRegisteration);
 
-// routing.post('/coaches/login', bookings.coachLogin);
+routing.post('/coaches/login', coach.coachLogin);
 
-// routing.get('coaches/all', bookings.getAllCoaches);
+routing.get('/coaches/all', coach.getAllCoaches);
 
-// routing.get('/coaches/:coachId', bookings.getCoachDetails);
+routing.get('/coaches/:coachId', coach.getCoachDetails);
 
-routing.get('/users/:userId', bookings.getUserDetails);
+routing.get('/users/:userId', user.getUserDetails);
 
-// routing.post('/users/booking/:userId/:coachId', bookings.makeAppointment);
+// routing.post('/users/booking/:userId/:coachId', booking.makeAppointment);
 
 // routing.put('/booking/:bookingId', bookings.rescheduleApp);
 
@@ -27,6 +29,6 @@ routing.get('/users/:userId', bookings.getUserDetails);
 
 // routing.get('/users/booking/:userId', bookings.getAllUsersApp);
 
-routing.all('*', bookings.invalidPath);
+routing.all('*', user.invalidPath);
 
 module.exports = routing;
