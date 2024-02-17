@@ -26,19 +26,38 @@ exports.userRegisteration = async (req, res, next) => {
             const hashPassword = bcrypt.hashSync(req.body.password, genSalt); // Hash the password with the generated salt
 
             req.body.password = hashPassword;
-            console.log(req.body);
 
-            const newUser = await User.create(req.body);
-            res.send('User registered successfully');
+            await User.create(req.body);
+            
+            res.status(201).json({
+                message: `Registered successfully with User ID: ${userId}`,
+            })
         }
     } catch (error) {
-        if (error.name === 'ValidationError') {
-            res.status(404).json({
-                message: error.message,
-            })
-            console.log(error.name, 'ritik');
+        const err = new Error(error.message);
+        err.status = 400;
+        next(err);
+    }
+}
+
+exports.userLogin = async (req, res, next) => {
+    try {
+        const user = await User.findOne({ userId: req.body.userId });
+
+        // Compare the provided password with the hashed password stored in the database
+        const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
+
+        if (user && isPasswordValid) {
+            res.status(200).send('Login Successful');
+        } else {
+            // If user not found, return this message
+            const error = new Error();
+            error.status = 400;
+            error.message = 'Incorrect user id or password';
+            next(error);
         }
-        console.log(error.message);
+    } catch (error) {
+        next(error);
     }
 }
 

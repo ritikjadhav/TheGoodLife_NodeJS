@@ -5,7 +5,7 @@ const routing = express.Router();
 
 routing.post('/users', bookings.userRegisteration);
 
-// routing.post('/users/login', bookings.userLogin);
+routing.post('/users/login', bookings.userLogin);
 
 // routing.post('/coaches', bookings.coachRegisteration);
 
