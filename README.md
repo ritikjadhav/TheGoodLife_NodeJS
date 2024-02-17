@@ -1,10 +1,10 @@
-# The Good Life Coaching Application
+# The Good Life Coaching Application 🌟
 
-## Overview
+## Overview 🚀
 
 The Good Life Coaching Application is a web-based platform built using Node.js where users can sign up and login to seek the guidance of famous Life Coaches. The application facilitates users to search for a life coach based on specialty and book appointments within the next seven days. Users can also view their upcoming appointments and have the flexibility to reschedule or cancel them. Similarly, coaches can sign up, login, and view their upcoming schedule to manage their appointments effectively.
 
-## Features
+## Features 🔥
 
 ### For Users:
 - **User Registration and Login:** Users can create an account by registering with their details and subsequently log in to the platform.
@@ -17,7 +17,7 @@ The Good Life Coaching Application is a web-based platform built using Node.js w
 - **View Upcoming Schedule:** Coaches can view their upcoming schedule to stay organized and manage their appointments effectively.
 - **Manage Appointments:** Coaches can see details of their upcoming appointments and make adjustments as necessary.
 
-## Installation
+## Installation 💻
 
 To run The Good Life Coaching Application locally, follow these steps:
 
@@ -27,7 +27,7 @@ To run The Good Life Coaching Application locally, follow these steps:
 4. Start the server: `npm start`
 5. Access the application in your browser at `http://localhost:3003`
 
-## Technologies Used
+## Technologies Used 🛠️
 
 - **Node.js:** Backend server environment
 - **Express.js:** Web application framework for Node.js
@@ -38,6 +38,6 @@ To run The Good Life Coaching Application locally, follow these steps:
 - **HTML, JavaScript:** Frontend technologies for building the user interface
 - **Bootstrap:** Frontend framework for responsive and mobile-first design
 
-## Contributors
+## Contributors 👨‍💻
 
 - [Ritik Jadhav](https://github.com/ritikjadhav)
