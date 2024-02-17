@@ -1,7 +1,8 @@
-const { Counter, User } = require('../Model/goodLifeSchema');
+const { Counter, User } = require('../Model/userModel');
+const db = require('../Model/db');
 const bcrypt = require('bcryptjs');
 
-const { v4: uuidv4 } = require('uuid'); // Generating unique userId by using UUIDs (Universally Unique Identifiers)
+//const { v4: uuidv4 } = require('uuid'); // Another way for generating unique userId by using UUIDs (Universally Unique Identifiers)
 
 exports.userRegisteration = async (req, res, next) => {
     try {
@@ -31,14 +32,14 @@ exports.userRegisteration = async (req, res, next) => {
             
             res.status(201).json({
                 message: `Registered successfully with User ID: ${userId}`,
-            })
+            });
         }
     } catch (error) {
         const err = new Error(error.message);
         err.status = 400;
         next(err);
     }
-}
+};
 
 exports.userLogin = async (req, res, next) => {
     try {
@@ -59,11 +60,30 @@ exports.userLogin = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-}
+};
+
+exports.getUserDetails = async (req, res, next) => {
+    try {
+        const user = await User.findOne({ "userId": req.params.userId });
+
+        if (user) {
+            res.status(200).json({
+                user,
+            });
+        } else {
+            const error = new Error();
+            error.status = 400;
+            error.message = 'User Id does not exist';
+            next(error);
+        }
+    } catch (error) {
+        next(error);
+    }
+};
 
 exports.invalidPath = (req, res, next) => {
     let error = new Error();
     error.status = 400;
     error.message = 'Invalid Route';
     next(error);
-}
+};

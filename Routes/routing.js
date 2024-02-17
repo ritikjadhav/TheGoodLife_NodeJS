@@ -1,5 +1,5 @@
 const express = require('express');
-const bookings = require('../Controller/theGoodLife');
+const bookings = require('../Controller/userController');
 
 const routing = express.Router();
 
@@ -15,7 +15,7 @@ routing.post('/users/login', bookings.userLogin);
 
 // routing.get('/coaches/:coachId', bookings.getCoachDetails);
 
-// routing.get('/users/:userId', bookings.getUserDetails);
+routing.get('/users/:userId', bookings.getUserDetails);
 
 // routing.post('/users/booking/:userId/:coachId', bookings.makeAppointment);
 
