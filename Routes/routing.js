@@ -19,15 +19,15 @@ routing.get('/coaches/:coachId', coach.getCoachDetails);
 
 routing.get('/users/:userId', user.getUserDetails);
 
-// routing.post('/users/booking/:userId/:coachId', booking.makeAppointment);
+routing.post('/users/booking/:userId/:coachId', booking.makeAppointment);
 
-// routing.put('/booking/:bookingId', bookings.rescheduleApp);
+routing.put('/booking/:bookingId', booking.rescheduleApp);
 
-// routing.delete('/booking/:bookingId', bookings.cancelApp);
+routing.delete('/booking/:bookingId', booking.cancelAppointment);
 
-// routing.get('/users/booking/:coachId', bookings.getAllCoachesApp);
+routing.get('/coaches/booking/:coachId', booking.getAllCoachesApp);
 
-// routing.get('/users/booking/:userId', bookings.getAllUsersApp);
+routing.get('/users/booking/:userId', booking.getAllUserAppointments);
 
 routing.all('*', user.invalidPath);
 
