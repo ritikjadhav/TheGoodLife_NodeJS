@@ -165,3 +165,4 @@ Error: Sun Feb 18 2024 22:58:47 GMT+0530 (India Standard Time) - User already ex
 Error: Sun Feb 18 2024 22:59:13 GMT+0530 (India Standard Time) - User validation failed: name: Name must be at least 3 characters long, email: Enter a valid email id
 Error: Sun Feb 18 2024 23:00:31 GMT+0530 (India Standard Time) - Cannot read properties of null (reading 'password')
 Error: Sun Feb 18 2024 23:03:33 GMT+0530 (India Standard Time) - There is an appointment in this slot already
+Error: Fri Feb 23 2024 23:55:03 GMT+0530 (India Standard Time) - It appears you have done something like `app.use(helmet)`, but it should be `app.use(helmet())`.
